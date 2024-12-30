@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+
+import type { Position } from "@/types";
+
+import Section from "@cjwilliams/ui/Section.astro";
+import Description from "@cjwilliams/ui/typography/Description.astro";
+import InlineDetail from "@cjwilliams/ui/typography/InlineDetail.astro";
+import Item from "@cjwilliams/ui/typography/Item.astro";
+
+const experience = await getCollection("experience");
+---
+<Section id="experience" name="Experience">
+  {experience.sort((a, b) => b.data.index - a.data.index).map(e => e.data).map(e => (
+    <div>
+      <Item>
+        {e.company}
+        <InlineDetail>({e.dates})</InlineDetail>
+      </Item>
+      <ul class="list-['→_'] list-inside">
+        {
+          e.positions.map((position: Position) => (
+            <li class="">
+              {e.positions.length > 1 ?
+                <Description>{position.title} <InlineDetail>({position.dates})</InlineDetail></Description>
+                :
+                <Description>{position.title}</Description>
+              }
+            </li>
+          ))
+        }
+        </ul>
+    </div>
+  ))}
+</Section>

@@ -1,0 +1,14 @@
+---
+import Divider from '@cjwilliams/ui/Divider.astro';
+
+interface Props {
+  id: string;
+  name: string;
+}
+
+const { id, name } = Astro.props
+---
+<section id={id} class="my-4 flex flex-col space-y-2">
+  <Divider label={name.toUpperCase()} />
+  <slot />
+</div>

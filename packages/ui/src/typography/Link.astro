@@ -1,0 +1,9 @@
+---
+export type Props = {
+  href: string;
+  underline?: boolean;
+}
+
+const { href, underline } = Astro.props;
+---
+<a class={`font-mono text-sm text-gray-700 underline-offset-2 ${underline ? "underline hover:decoration-dotted" : "hover:underline"}`} href={href}><slot /></a>

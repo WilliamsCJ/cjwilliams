@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import Section from "@cjwilliams/ui/Section.astro";
+import Description from "@cjwilliams/ui/typography/Description.astro";
+import Detail from "@cjwilliams/ui/typography/Detail.astro";
+import Item from "@cjwilliams/ui/typography/Item.astro";
+import Link from "@cjwilliams/ui/typography/Link.astro";
+
+const posts = await getCollection("blog");
+---
+<Section id="blog" name="Blog">
+  {posts.sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()).map(post => (
+    <div>
+      <Link href={post.id}>
+        <Item>{post.data.title}</Item>
+      </Link>
+      <Description>{post.data.description}</Description>
+      <Detail>{post.data.publishedDate.toLocaleDateString()}</Detail>
+    </div> 
+  ))}
+</Section>

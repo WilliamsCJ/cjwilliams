@@ -1,0 +1,16 @@
+---
+import Title from "@cjwilliams/ui/typography/Title.astro"
+import Link from "@cjwilliams/ui/typography/Link.astro";
+
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/'
+---
+<header class="w-full flex justify-between items-center ">
+  <a href="/">
+    <Title>CJ WILLIAMS</Title>
+  </a>
+  <nav class="flex">
+    {!isHome && <Link href="/">HOME</Link>}
+    <!-- <LightDarkToggle /> -->
+  </nav>
+</div>

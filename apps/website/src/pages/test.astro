@@ -1,0 +1,24 @@
+---
+import "@cjwilliams/ui/fonts.css"
+import Footer from "@cjwilliams/ui/Footer.astro"
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Test</title>
+	</head>
+	<body >
+    <p class="p-12 font-mono text-sm bg-black text-axiom">Cloud-native architecture meets built-in tracing and routing.
+      Experience log management without compromise.</p>
+  </body>
+</html>

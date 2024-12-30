@@ -1,0 +1,11 @@
+---
+import Text from "@cjwilliams/ui/typography/Text.astro";
+import Link from "@cjwilliams/ui/typography/Link.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-6 w-full flex justify-between font-mono">
+  <Text>CJ Williams, {currentYear}</Text>
+  <Text>Made in Battersea (<Link href="">Source</Link>)</Text>
+</footer>

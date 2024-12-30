@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import Section from "@cjwilliams/ui/Section.astro";
+import Description from "@cjwilliams/ui/typography/Description.astro";
+import Detail from "@cjwilliams/ui/typography/Detail.astro";
+import Item from "@cjwilliams/ui/typography/Item.astro";
+import Link from "@cjwilliams/ui/typography/Link.astro";
+
+const experience = await getCollection("portfolio");
+---
+<Section id="portfolio" name="Portfolio">
+  {experience.sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()).map(e => (
+    <div class="space-y-1.5">
+      <Link href={e.data.link}>
+        <Item>{e.data.title}</Item>
+      </Link>
+      <Description>{e.data.description}</Description>
+      <Detail>{e.data.publishedDate.getFullYear()}</Detail>
+    </div>
+  
+  ))}
+</Section>
