@@ -7,6 +7,9 @@ import Title from '@cjwilliams/ui/typography/Title.astro';
 import Prose from '@cjwilliams/ui/typography/Prose.astro';
 
 import { prepareTagsForDisplay } from '@/utils'
+import PageViewCounter from '@/components/PageViewCounter.astro';
+import JustifyBetweenLayout from '@/components/layouts/JustifyBetweenLayout.astro';
+import PageViewSkeleton from '@/components/PageViewSkeleton.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -15,13 +18,19 @@ export async function getStaticPaths() {
   }));
 }
 
+const path = Astro.url.pathname;
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 <RootLayout title={`${entry.data.title} | CJ Williams`}>
   <div class="mt-6 flex-col space-y-4">
     <Title>{entry.data.title}</Title>
-    <Detail>{entry.data.publishedDate.toLocaleDateString()} · {prepareTagsForDisplay(entry.data.tags)}</Detail>
+    <JustifyBetweenLayout>
+      <Detail>{entry.data.publishedDate.toLocaleDateString()} · {prepareTagsForDisplay(entry.data.tags)}</Detail>
+      <PageViewCounter path={path} server:defer>
+        <PageViewSkeleton />
+      </PageViewCounter>
+    </JustifyBetweenLayout >
     <Prose>
       <Content />
     </Prose>

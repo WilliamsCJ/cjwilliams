@@ -1,0 +1,12 @@
+---
+import { PageView, count, db, eq } from "astro:db";
+import Detail from "@cjwilliams/ui/typography/Detail.astro";
+
+const { path } = Astro.props
+
+const views = await db
+  .select({ value: count() })
+  .from(PageView) 
+  .where(eq(PageView.page, path));
+---
+<Detail>{views[0].value} views</Detail>
