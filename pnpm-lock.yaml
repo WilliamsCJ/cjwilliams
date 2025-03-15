@@ -20,8 +20,8 @@ importers:
         specifier: ^0.9.4
         version: 0.9.4(prettier@3.2.5)(typescript@5.5.3)
       '@astrojs/db':
-        specifier: ^0.14.5
-        version: 0.14.5
+        specifier: ^0.14.8
+        version: 0.14.8
       '@astrojs/mdx':
         specifier: ^4.0.3
         version: 4.0.3(astro@5.1.1)
@@ -107,22 +107,22 @@ packages:
     resolution: {integrity: sha512-bL/O7YBxsFt55YHU021oL+xz+B/9HvGNId3F9xURN16aeqDK9juHGktdkCSXz+U4nqFACq6ZFvWomOzhV+zfPw==}
     dev: false
 
-  /@astrojs/db@0.14.5:
-    resolution: {integrity: sha512-qYPQQyZPM70B19xPHpzwV0wQJQdncoRjG/UpPM63vLSgpGGbpCAqDzQPmOm5inZOWKX2LIwN6jA+BkpaWNACQg==}
+  /@astrojs/db@0.14.8:
+    resolution: {integrity: sha512-xy6w0wQdZbN1p+q1s/hd19cPbgN7K1KYLNu0Yf5kwxMk4taE6bWbWzsveB+OmiNc4xhSuNNRN1TStOwzXNETBg==}
     dependencies:
-      '@astrojs/studio': 0.1.3
+      '@astrojs/studio': 0.1.4
       '@libsql/client': 0.14.0
-      async-listen: 3.0.1
+      async-listen: 3.1.0
       deep-diff: 1.0.2
       drizzle-orm: 0.31.4(@libsql/client@0.14.0)
       github-slugger: 2.0.0
       kleur: 4.1.5
-      nanoid: 5.0.9
+      nanoid: 5.1.3
       open: 10.1.0
       prompts: 2.4.2
       yargs-parser: 21.1.1
-      yocto-spinner: 0.1.2
-      zod: 3.23.8
+      yocto-spinner: 0.2.1
+      zod: 3.24.2
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
       - '@cloudflare/workers-types'
@@ -251,8 +251,8 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/studio@0.1.3:
-    resolution: {integrity: sha512-yJfQf5UcT5I+S3zJJ6BXvssw0xm0A6beK/K7mBnJmly18zWy1ZXQ9aTvQYaTKo0JTpyQodITHzycs6FlHBRKRg==}
+  /@astrojs/studio@0.1.4:
+    resolution: {integrity: sha512-WvMd9REeMQdlRGmISNX7nVW0xO9OR8+cIeusRpDKbKNqGC3DLxe4T+MJGim5RVGESqIY1GHOoFEaBbZejwU5Kg==}
     dependencies:
       ci-info: 4.1.0
       kleur: 4.1.5
@@ -2010,8 +2010,8 @@ packages:
       - yaml
     dev: false
 
-  /async-listen@3.0.1:
-    resolution: {integrity: sha512-cWMaNwUJnf37C/S5TfCkk/15MwbPRwVYALA2jtjkbHjCmAPiDXyNJy2q3p1KAZzDLHAWyarUWSujUoHR4pEgrA==}
+  /async-listen@3.1.0:
+    resolution: {integrity: sha512-TkOhqze98lP+6e7SPbrBpyhTpfvqqX8VYKGn4uckrgPan4WQIHnTaUD2zZzZS18eVVDj4rHPcIZa1PGgvo1DfA==}
     engines: {node: '>= 14'}
     dev: false
 
@@ -4646,8 +4646,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /nanoid@5.0.9:
-    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
+  /nanoid@5.1.3:
+    resolution: {integrity: sha512-zAbEOEr7u2CbxwoMRlz/pNSpRP0FdAU4pRaYunCdEezWohXFs+a0Xw7RfkKaezMsmSM1vttcLthJtwRnVtOfHQ==}
     engines: {node: ^18 || >=20}
     hasBin: true
     dev: false
@@ -6762,6 +6762,13 @@ packages:
       yoctocolors: 2.1.1
     dev: false
 
+  /yocto-spinner@0.2.1:
+    resolution: {integrity: sha512-lHHxjh0bXaLgdJy3cNnVb/F9myx3CkhrvSOEVTkaUgNMXnYFa2xYPVhtGnqhh3jErY2gParBOHallCbc7NrlZQ==}
+    engines: {node: '>=18.19'}
+    dependencies:
+      yoctocolors: 2.1.1
+    dev: false
+
   /yoctocolors@2.1.1:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
@@ -6787,6 +6794,10 @@ packages:
 
   /zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+    dev: false
+
+  /zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
     dev: false
 
   /zwitch@2.0.4:
