@@ -2,8 +2,17 @@
 export type Props = {
   href: string;
   underline?: boolean;
+  group?: boolean
 }
 
-const { href, underline } = Astro.props;
+const { href, underline, group } = Astro.props;
 ---
-<a class={`font-mono text-sm text-gray-700 underline-offset-2 ${underline ? "underline hover:decoration-dotted" : "hover:underline"}`} href={href}><slot /></a>
+{group ? 
+  <a class={`font-mono text-sm text-gray-700 underline-offset-2 underline ${underline ? "group-hover:decoration-dotted" : "decoration-dotted group-hover:decoration-solid"}`} href={href}>
+    <slot />
+  </a>
+: 
+  <a class={`font-mono text-sm text-gray-700 underline-offset-2 ${underline ? "underline hover:decoration-dotted" : "hover:underline"}`} href={href}>
+    <slot />
+  </a>
+}

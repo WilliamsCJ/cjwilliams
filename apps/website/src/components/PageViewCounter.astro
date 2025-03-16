@@ -12,4 +12,4 @@ const views = await db
   .from(PageView) 
   .where(eq(PageView.page, formattedPath));
 ---
-<Detail>{views[0].value} views</Detail>
+{views[0].value} views

@@ -26,10 +26,12 @@ const { Content } = await render(entry);
   <div class="mt-6 flex-col space-y-4">
     <Title>{entry.data.title}</Title>
     <JustifyBetweenLayout>
-      <Detail>{entry.data.publishedDate.toLocaleDateString()} · {prepareTagsForDisplay(entry.data.tags)}</Detail>
-      <PageViewCounter path={path} server:defer>
-        <PageViewSkeleton />
-      </PageViewCounter>
+      <Detail>
+        {entry.data.publishedDate.toLocaleDateString()} 
+        · 
+        <PageViewCounter path={path} server:defer><PageViewSkeleton /></PageViewCounter>
+      </Detail>
+      <Detail>{prepareTagsForDisplay(entry.data.tags)}</Detail>
     </JustifyBetweenLayout >
     <Prose>
       <Content />
