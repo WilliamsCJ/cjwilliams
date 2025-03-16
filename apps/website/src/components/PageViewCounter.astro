@@ -12,3 +12,5 @@ const views = await db
   .where(eq(PageView.page, path));
 ---
 <Detail>{views[0].value} views</Detail>
+<Detail>{path}</Detail>
+
