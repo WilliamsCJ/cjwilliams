@@ -4,6 +4,8 @@ import Detail from "@cjwilliams/ui/typography/Detail.astro";
 
 const { path } = Astro.props
 
+console.log(path)
+
 const views = await db
   .select({ value: count() })
   .from(PageView) 
