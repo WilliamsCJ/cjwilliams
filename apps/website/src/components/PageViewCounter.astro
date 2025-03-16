@@ -1,0 +1,15 @@
+---
+import { PageView, count, db, eq } from "astro:db";
+import Detail from "@cjwilliams/ui/typography/Detail.astro";
+import { removeTrailingSlash } from "@/utils";
+
+const { path } = Astro.props
+
+const formattedPath = removeTrailingSlash(path)
+
+const views = await db
+  .select({ value: count() })
+  .from(PageView) 
+  .where(eq(PageView.page, formattedPath));
+---
+{views[0].value} views

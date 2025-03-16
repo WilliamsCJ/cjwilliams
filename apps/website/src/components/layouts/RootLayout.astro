@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro";
 import ContainerLayout from "@/components/layouts/ContainerLayout.astro";
 import LightDarkScript from "@/components/theme/LightDarkScript.astro";
+import PageViewLogger from "@/components/PageViewLogger.astro";
 import Analytics from '@vercel/analytics/astro'
 
 
@@ -23,7 +24,7 @@ const { title } = Astro.props;
 		<LightDarkScript />
 		
 	</head>
-	<body id="about" class="bg-gray-100 dark:bg-black text-gray-500 font-sans w-full flex flex-col ">
+	<body id="about" class="bg-gray-100 text-gray-500 font-sans w-full flex flex-col ">
 		<ContainerLayout>
 			<Header />
 			<slot />
@@ -32,4 +33,5 @@ const { title } = Astro.props;
 
 		<Analytics />
   </body>
+	<PageViewLogger />
 </html>

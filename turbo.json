@@ -5,7 +5,8 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["ASTRO_DB_REMOTE_URL", "ASTRO_DB_APP_TOKEN"]
     },
     "lint": {
       "dependsOn": ["^lint"]

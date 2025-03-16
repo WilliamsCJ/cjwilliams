@@ -1,0 +1,5 @@
+<script>
+  import { actions } from "astro:actions";
+  import { removeTrailingSlash } from "@/utils";
+  await actions.logPageView({ page: removeTrailingSlash(window.location.pathname)});
+</script>
